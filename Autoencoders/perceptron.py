@@ -51,6 +51,7 @@ class Perceptron:
         self.M = self.Y_dtrain.shape[0]
         self.Yd_train = np.reshape(Y_train,(self.N,self.M))
         self.model_name = f"MLP hl = {hl} hn= {hn}"
+        
 
         # Iniitialize neuron and layer numbers
         self.neurons_input = self.inputs
@@ -60,6 +61,8 @@ class Perceptron:
         self.weights_dimensions = [self.inputs ,self.neurons_input] + self.neurons_hidden + [self.outputs]
         self.neurons_numbers = [self.neurons_input] + self.neurons_hidden + [self.outputs]
         self.n_layers = self.layers_hidden + 2
+
+        self.bias = [0.7] * self.n_layers
 
         # Compute the number of weights per layer and the total number of weights in the network
 
@@ -138,7 +141,7 @@ class Perceptron:
         for i in range(self.n_layers):
             wi = weights[i]
             vi = np.dot(phi_i_v_i,wi)
-            vi = vi + 0.7
+            vi = vi + self.bias[i]
             Vi.append(vi)
             phi_i_v_i = self.num_phi(vi,i)
             Yi.append(phi_i_v_i)
