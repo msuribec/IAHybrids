@@ -1,0 +1,10 @@
+venv
+__pycache__
+Autoencoders/venv
+GAN/venv
+Lenet5/venv
+Style transfer/venv
+Autoencoders/__pycache__
+GAN/__pycache__
+Lenet5/__pycache__
+Style transfer/__pycache__
