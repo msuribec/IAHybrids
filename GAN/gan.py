@@ -263,6 +263,6 @@ class GAN:
         plt.savefig(f'{self.results_path}/loss.png')
 
 if __name__ == "__main__":
-    g1 = GAN(512,3,64,128,1, 0.0002)
+    g1 = GAN(512,100,64,128,1, 0.0002)
     g1.train()
     g1.save_results()
